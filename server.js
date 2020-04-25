@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const compression = require("compression");
 const helmet = require("helmet");
+
+const PORT = process.env.PORT || 3000;
+
 require("./employee");
 
 server.use(bodyParser.json());
@@ -85,6 +88,6 @@ server.post("/update", (req, res) => {
     });
 });
 
-server.listen(3000, () => {
+server.listen(PORT, () => {
   console.log("server runnning");
 });
